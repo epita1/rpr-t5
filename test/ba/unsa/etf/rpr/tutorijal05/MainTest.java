@@ -111,12 +111,12 @@ class MainTest {
     public void testMnozenje(FxRobot robot) {
         display = robot.lookup("#display").queryAs(Label.class);
         robot.clickOn("#btn1");
-        robot.clickOn("btn2");
+        robot.clickOn("#btn2");
         robot.clickOn("#btn3");
         robot.clickOn("#puta");
         robot.clickOn("#btn1");
         robot.clickOn("#equalsBtn");
-        assertEquals("123", display.getText());
+        assertEquals("123.0", display.getText());
     }
 
     @Test
@@ -125,7 +125,18 @@ class MainTest {
         robot.clickOn("#btn3");
         robot.clickOn("#kroz");
         robot.clickOn("#btn4");
-        robot.clickOn("equalsBtn");
+        robot.clickOn("#equalsBtn");
         assertEquals("0.75", display.getText()); // na dvije decimale
+    }
+
+    @Test
+    public void testRemainder(FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn5");
+        robot.clickOn("#btn1");
+        robot.clickOn("#mod");
+        robot.clickOn("#btn5");
+        robot.clickOn("#equalsBtn");
+        assertEquals("1.0", display.getText());
     }
 }

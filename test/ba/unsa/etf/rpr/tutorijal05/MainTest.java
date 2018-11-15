@@ -149,4 +149,17 @@ class MainTest {
         robot.clickOn("#equalsBtn");
         assertEquals("-1.0", display.getText());
     }
+
+    @Test
+    public void testSabiranjeMnozenje(FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn7");
+        robot.clickOn("#puta");
+        robot.clickOn("#btn9");
+        robot.clickOn("#equalsBtn");
+        robot.clickOn("#plusBtn");
+        robot.clickOn("#btn3");
+        robot.clickOn("#equalsBtn");
+        assertEquals("66.0", display.getText());
+    }
 }

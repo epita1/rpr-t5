@@ -139,4 +139,14 @@ class MainTest {
         robot.clickOn("#equalsBtn");
         assertEquals("1.0", display.getText());
     }
+
+    @Test
+    public void testNegativni(FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn5");
+        robot.clickOn("#minus");
+        robot.clickOn("#btn6");
+        robot.clickOn("#equalsBtn");
+        assertEquals("-1.0", display.getText());
+    }
 }
